@@ -1,7 +1,7 @@
 <div *ngIf="countries.length===0;else table" class="alert alert-warning text-center">
 
-  No hay paises que mostrar 
- 
+  No hay paises que mostrar
+
 </div>
 
 <ng-template #table>
@@ -27,7 +27,8 @@
         <td>{{country.name.common}}</td>
         <td>{{country.capital}}</td>
         {{country.population | number}}
-        <td><a href="#">ver mas</a></td>
+        <!-- cuando colocamoes el routerlink entre llaves , puede recibir un arreglo  -->
+        <td><a [routerLink]="['/countries/by',country.cca3]">Info</a></td>
       </tr>
     </tbody>
 
