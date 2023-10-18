@@ -12,15 +12,18 @@ import { tap } from 'rxjs';
 export class ByCapitalPageComponent {
 
   public countries: Country[] =[];
+  public isLoading:boolean=false;
 
   constructor( private countriesService: CountriesService ){}
 
   searchByCapital(term:string):void {
+    this.isLoading = true;
    const result = this.countriesService.searchCapital(term).pipe(
     tap(countries =>{
-      this.countries = countries;}),
-    tap(response => console.log("respuesta",response)
-    )
+      this.countries = countries;
+      this.isLoading = false;
+    }),
+
    )
    result.subscribe();
 

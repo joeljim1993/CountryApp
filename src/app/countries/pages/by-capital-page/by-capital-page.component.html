@@ -1,10 +1,13 @@
 <h2>Por Capital</h2>
 <hr>
+<!-- onDebounce : evento generado por un subject -->
+<!-- onValue: evento emitido por un keyup.enter -->
 
 <div class="row">
   <div class="col">
     <shared-search-box
     (onValue)="searchByCapital($event)"
+    (onDebounce)="searchByCapital($event)"
     ></shared-search-box>
     busquedas
   </div>
@@ -14,7 +17,7 @@
 <div class="row">
   <div class="col">
     <hr>
-
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
     <countries-table [countries]="countries"></countries-table>
   </div>
 </div>

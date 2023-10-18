@@ -1,13 +1,17 @@
-<h2>Por Region</h2>
+<h2>Region : {{ selectedRegion }}</h2>
 
 <div class="row">
-  <div class="col">
+  <div class="col text-center">
 
-    <shared-search-box
-    (onValue)="searchByRegion($event)"
+    <button *ngFor="let region of regions"
+    class="btn mx-2"
+    (click)="searchByRegion( region )"
     >
-      
-    </shared-search-box>
+      {{ region }}
+    </button>
+
+
+
   </div>
 </div>
 
