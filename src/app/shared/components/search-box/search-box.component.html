@@ -5,5 +5,21 @@
   class="form-control"
   (keyup.enter)="emitValue(txtInput.value)"
   (keyup)="onKeyPress( txtInput.value)"
+  [value]="initialValue"
   #txtInput
 >
+
+<!-- <input
+  type="text"
+  /placeholder de manera dinamica ->[] 
+  [placeholder]="placeholder"
+  class="form-control"
+  /manera cmo se emiten los eventos 
+  (keyup.enter)="emitValue(txtInput.value)"
+  (keyup)="onKeyPress( txtInput.value)"
+  /value del input , pasado de manera dinamica 
+  [value]="initialValue"
+  /txtInput es una referencia de manera local 
+  #txtInput
+>
+ -->
