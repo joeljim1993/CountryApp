@@ -18,8 +18,10 @@ export class CountriesService {
 
   }
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.loadFromLocalStorage();
+    console.log("cacheStor",this.cacheStore);
+
   }
 
   private saveToLocalStorage(){
